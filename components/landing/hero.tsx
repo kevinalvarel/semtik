@@ -5,19 +5,35 @@ import { Calendar, MapPin, Users, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { FaArrowUp, FaStar } from "react-icons/fa";
 import Link from "next/link";
+import DotField from "@/components/animated/DotField";
 
 export function Hero() {
   return (
     <section className="relative overflow-hidden border-b-4 border-black bg-white py-16 lg:py-28 select-none">
       {/* Grid background */}
-      <div className="absolute inset-0 bg-[radial-gradient(#000_1.5px,transparent_1.5px)] [background-size:24px_24px] opacity-10" />
+      <div className="absolute inset-0 z-0">
+        <DotField
+          className="absolute inset-0 pointer-events-none"
+          dotRadius={1.5}
+          dotSpacing={14}
+          bulgeStrength={67}
+          glowRadius={0}
+          sparkle={false}
+          waveAmplitude={0}
+          cursorRadius={500}
+          gradientFrom="#111111"
+          gradientTo="#5795d9"
+          cursorForce={0.1}
+          bulgeOnly
+        />
+      </div>
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-center">
           {/* Left Column: Title and CTAs */}
           <div className="lg:col-span-7 flex flex-col justify-center">
             {/* Huge Headline */}
-            <h1 className="text-5xl sm:text-7xl font-black tracking-tight text-black uppercase leading-none">
+            <h1 className="text-4xl sm:text-7xl font-black tracking-tight text-black uppercase leading-none">
               <div className="flex flex-row gap-4">
                 <span className="block bg-neo-pink border-4 border-black px-4 py-2 w-fit shadow-[4px_4px_0px_0px_#000] rotate-[-1deg] mb-3">
                   SEMTIK
@@ -114,9 +130,6 @@ export function Hero() {
           {/* Right Column: Neo-Brutalist Visual Canvas */}
           <div className="lg:col-span-5 relative flex justify-center items-center py-6">
             <div className="relative w-full max-w-[400px] aspect-square border-4 border-black bg-white shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] overflow-hidden flex flex-col items-center justify-center p-8">
-              {/* Dot grid inside card */}
-              <div className="absolute inset-0 bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:12px_12px] opacity-15" />
-
               {/* Central badge */}
               <motion.div
                 initial={{ scale: 0.8, rotate: -5 }}
