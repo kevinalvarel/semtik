@@ -161,6 +161,12 @@
   --shadow-lg: var(--shadow-lg);
   --shadow-xl: var(--shadow-xl);
   --shadow-2xl: var(--shadow-2xl);
+
+  --color-neo-yellow: #FFE44D;
+  --color-neo-blue: #5B8CFF;
+  --color-neo-pink: #FF6B9D;
+  --color-neo-green: #55E6A5;
+  --color-neo-orange: #FF8A3D;
 }
 
 @layer base {
@@ -170,4 +176,20 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+@utility neo-btn {
+  @apply inline-flex items-center justify-center border-4 border-black bg-white px-6 py-3 font-bold text-black shadow-[4px_4px_0px_0px_#000] transition-all duration-150 hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_0px_#000] active:translate-x-0 active:translate-y-0 active:shadow-none cursor-pointer;
+}
+
+@utility neo-btn-sm {
+  @apply inline-flex items-center justify-center border-2 border-black bg-white px-4 py-2 font-bold text-black shadow-[2px_2px_0px_0px_#000] transition-all duration-150 hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[4px_4px_0px_0px_#000] active:translate-x-0 active:translate-y-0 active:shadow-none cursor-pointer;
+}
+
+@utility neo-card {
+  @apply border-4 border-black bg-white p-6 shadow-[4px_4px_0px_0px_#000] transition-all duration-200;
+}
+
+@utility neo-card-interactive {
+  @apply border-4 border-black bg-white p-6 shadow-[4px_4px_0px_0px_#000] transition-all duration-200 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[8px_8px_0px_0px_#000];
 }
