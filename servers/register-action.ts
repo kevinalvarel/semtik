@@ -32,7 +32,7 @@ export async function createRegistration(payload: PesertaSchema) {
       email: parsed.data.email,
       nama: parsed.data.nama,
       fakultas: parsed.data.fakultas,
-      prodi: parsed.data.prodi,
+      prodi: parsed.data.prodi as string,
     });
 
     return {
