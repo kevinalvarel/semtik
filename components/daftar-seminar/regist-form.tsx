@@ -87,8 +87,7 @@ export function RegistForm({
 
     if (!result.success) {
       toast.error(result.message);
-    }
-    toast.success(result.message);
+    } else toast.success(result.message);
   };
 
   return (
