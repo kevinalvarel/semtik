@@ -57,7 +57,7 @@ export function Hero() {
             {/* Actions */}
             <div className="mt-10 flex flex-wrap gap-4">
               <Link
-                href="#register"
+                href="/daftar-seminar"
                 className="neo-btn bg-neo-yellow text-base group gap-2"
               >
                 Daftar Sekarang

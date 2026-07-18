@@ -2,6 +2,16 @@
 
 import { motion } from "motion/react";
 import { ArrowRight, Ticket, CheckCircle2 } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { RegistForm } from "@/components/daftar-seminar/regist-form";
 
 const marqueeText =
   " DAFTAR SEKARANG • SEMTIK 2026 • INOVASI TEKNOLOGI • AI & CLOUD SECURITY •";
@@ -72,23 +82,36 @@ export function RegistrationCTA() {
                 <span className="text-lg sm:text-xl font-bold text-black/60 line-through">
                   Rp 20.000
                 </span>
-                <span className="text-3xl sm:text-4xl font-black text-neo-pink uppercase tracking-tight ">
+                <span className="text-3xl sm:text-4xl font-black text-neo-pink uppercase tracking-tight font-architects">
                   GRATIS
                 </span>
               </div>
             </div>
 
-            <button
-              onClick={() =>
-                alert(
-                  "Form pendaftaran akan segera dibuka! Terima kasih atas ketertarikan Anda.",
-                )
-              }
-              className="w-full neo-btn bg-[#FFE44D] text-base group gap-2"
-            >
-              Daftar Sekarang
-              <ArrowRight className="size-5 transition-transform group-hover:translate-x-1" />
-            </button>
+            <Dialog>
+              <DialogTrigger
+                render={
+                  <Button className="w-full neo-btn bg-[#FFE44D] text-base group gap-2">
+                    Daftar Sekarang
+                    <ArrowRight className="size-5 transition-transform group-hover:translate-x-1" />
+                  </Button>
+                }
+              />
+              <DialogContent className="max-h-[90vh] overflow-y-auto border-4 border-black bg-white p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-none">
+                <DialogHeader className="border-b-4 border-black pb-4 mb-4">
+                  <DialogTitle className="text-2xl font-black text-black">
+                    Form Pendaftaran
+                  </DialogTitle>
+                  <DialogDescription className="text-sm font-bold text-black/85">
+                    Silakan isi form di bawah ini untuk mendaftarkan diri
+                    sebagai peserta SEMTIK 2026.
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="pt-2">
+                  <RegistForm />
+                </div>
+              </DialogContent>
+            </Dialog>
           </div>
         </div>
       </div>

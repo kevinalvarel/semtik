@@ -53,7 +53,6 @@ export function Countdown() {
   return (
     <section className="relative overflow-hidden border-b-4 border-black bg-neo-blue py-16 select-none">
       {/* Grid background */}
-      <div className="absolute inset-0 bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:16px_16px] opacity-15" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-3xl sm:text-5xl font-black uppercase text-black tracking-tight mb-4">

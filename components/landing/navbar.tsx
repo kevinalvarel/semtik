@@ -10,6 +10,7 @@ import {
   SheetHeader,
   SheetTitle,
 } from "@/components/ui/sheet";
+import Link from "next/link";
 
 const navLinks = [
   { label: "Tentang", href: "#tentang" },
@@ -25,15 +26,17 @@ export function Navbar() {
     <header className="sticky top-0 z-40 w-full border-b-4 border-black bg-white select-none">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Branding logo */}
-        <a
-          href="#"
-          className="flex items-center gap-2 text-xl sm:text-2xl font-black tracking-tighter text-black uppercase"
+        <Link
+          href="/"
+          className="flex items-center gap-2 text-xs sm:text-sm font-black tracking-tighter text-black uppercase"
         >
-          SEMTIK{" "}
-          <span className="bg-neo-yellow px-2 py-0.5 border-2 border-black text-xs font-mono tracking-normal normal-case">
+          <span className="block bg-neo-pink border-4 border-black px-4 py-2 w-fit shadow-[4px_4px_0px_0px_#000] rotate-[-1deg] mb-3">
+            SEMTIK
+          </span>
+          <span className="block bg-neo-yellow border-4 border-black px-4 py-2 w-fit shadow-[4px_4px_0px_0px_#000] rotate-[1deg] mb-3">
             2026
           </span>
-        </a>
+        </Link>
 
         {/* Desktop nav items */}
         <nav className="hidden md:flex items-center gap-8">
@@ -51,9 +54,12 @@ export function Navbar() {
 
         {/* Desktop CTA Button */}
         <div className="hidden md:block">
-          <a href="#register" className="neo-btn-sm bg-neo-yellow text-sm">
+          <Link
+            href="/daftar-seminar"
+            className="neo-btn-sm bg-neo-yellow text-sm"
+          >
             Daftar Sekarang
-          </a>
+          </Link>
         </div>
 
         {/* Mobile menu trigger */}
@@ -91,13 +97,13 @@ export function Navbar() {
                     {link.label}
                   </a>
                 ))}
-                <a
-                  href="#register"
+                <Link
+                  href="/daftar-seminar"
                   onClick={() => setIsOpen(false)}
                   className="neo-btn bg-neo-yellow text-center py-3 mt-4 text-base"
                 >
                   Daftar Sekarang
-                </a>
+                </Link>
               </div>
             </SheetContent>
           </Sheet>

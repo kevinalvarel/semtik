@@ -1,6 +1,7 @@
 "use client";
 
 import { Mail, Phone, MapPin, Sparkles } from "lucide-react";
+import Link from "next/link";
 import { FaGithub, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
 
 const socialMedias = [
@@ -28,15 +29,19 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 mb-12">
           {/* Column 1: Branding */}
           <div className="md:col-span-1 flex flex-col gap-4">
-            <a
-              href="#"
-              className="flex items-center gap-2 text-2xl font-black tracking-tighter text-white uppercase w-fit"
+            <Link
+              href="/"
+              className="flex items-center gap-2 text-xs sm:text-sm font-black tracking-tighter text-black uppercase"
             >
-              SEMTIK
-              <span className="bg-neo-yellow text-black px-2 py-0.5 border-2 border-white text-xs font-mono tracking-normal normal-case">
-                2026
-              </span>
-            </a>
+              <div className="flex flex-row gap-2">
+                <span className="block bg-neo-pink border-4 border-white px-4 py-2 w-fit shadow-[4px_4px_0px_0px_#000] rotate-[-1deg] mb-3">
+                  SEMTIK
+                </span>
+                <span className="block bg-neo-yellow border-4 border-white px-4 py-2 w-fit shadow-[4px_4px_0px_0px_#000] rotate-[1deg] mb-3">
+                  2026
+                </span>
+              </div>
+            </Link>
             <p className="text-sm font-bold text-gray-400 leading-relaxed">
               Seminar Informatika Nasional edisi ke-10. Wadah kolaborasi tak
               terbatas antara akademisi, peneliti, dan praktisi industri
