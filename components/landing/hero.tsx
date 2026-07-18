@@ -9,7 +9,7 @@ import DotField from "@/components/animated/DotField";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden border-b-4 border-black bg-white py-16 lg:py-28 select-none">
+    <section className="relative overflow-hidden border-b-4 border-black bg-white py-16 :py-20 3xl:py-28 select-none">
       {/* Grid background */}
       <div className="absolute inset-0 z-0">
         <DotField
@@ -77,12 +77,14 @@ export function Hero() {
               <div className="neo-card bg-neo-blue">
                 <Calendar className="size-6 text-black mb-2" />
                 <h3 className="font-mono text-xs uppercase font-bold text-black/85">
-                  Tanggal
+                  Waktu
                 </h3>
                 <p className="font-black text-base text-black mt-1 leading-tight">
-                  Desember 2026
+                  16 Desember 2026
                 </p>
-                <p className="font-mono text-xs text-black/75 mt-0.5">TBA</p>
+                <p className="font-mono text-xs text-black/75 mt-0.5">
+                  08:30 - 12:50 WIB
+                </p>
               </div>
 
               {/* Location Card */}

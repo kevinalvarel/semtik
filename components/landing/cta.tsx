@@ -12,6 +12,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { RegistForm } from "@/components/daftar-seminar/regist-form";
+import Link from "next/link";
 
 const marqueeText =
   " DAFTAR SEKARANG • SEMTIK 2026 • INOVASI TEKNOLOGI • AI & CLOUD SECURITY •";
@@ -87,31 +88,14 @@ export function RegistrationCTA() {
                 </span>
               </div>
             </div>
-
-            <Dialog>
-              <DialogTrigger
-                render={
-                  <Button className="w-full neo-btn bg-[#FFE44D] text-base group gap-2">
-                    Daftar Sekarang
-                    <ArrowRight className="size-5 transition-transform group-hover:translate-x-1" />
-                  </Button>
-                }
-              />
-              <DialogContent className="max-h-[90vh] overflow-y-auto border-4 border-black bg-white p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-none">
-                <DialogHeader className="border-b-4 border-black pb-4 mb-4">
-                  <DialogTitle className="text-2xl font-black text-black">
-                    Form Pendaftaran
-                  </DialogTitle>
-                  <DialogDescription className="text-sm font-bold text-black/85">
-                    Silakan isi form di bawah ini untuk mendaftarkan diri
-                    sebagai peserta SEMTIK 2026.
-                  </DialogDescription>
-                </DialogHeader>
-                <div className="pt-2">
-                  <RegistForm />
-                </div>
-              </DialogContent>
-            </Dialog>
+            <Button
+              className="w-full neo-btn bg-[#FFE44D] text-base group gap-2"
+              render={<Link href="/daftar-seminar" />}
+              nativeButton={false}
+            >
+              Daftar Sekarang
+              <ArrowRight className="size-5 transition-transform group-hover:translate-x-1" />
+            </Button>
           </div>
         </div>
       </div>

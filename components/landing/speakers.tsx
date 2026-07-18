@@ -24,7 +24,7 @@ interface Speaker {
 const speakers: Speaker[] = [
   {
     name: "Ali Reza Bahtiar",
-    position: "Ex Google Student Ambassador",
+    position: "Content Creator",
     company: "UNIVERSITAS GUNADARMA",
     expertise: "Influencer",
     image:
@@ -37,10 +37,10 @@ const speakers: Speaker[] = [
     },
   },
   {
-    name: "TBA",
-    position: "TBA",
-    company: "TBA",
-    expertise: "TBA",
+    name: "Ariq Surya Nugraha",
+    position: "Founder & CEO",
+    company: "Petruck.ID",
+    expertise: "Entrepreneurship",
     image:
       "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&auto=format&fit=crop&q=80",
     color: "bg-[#FF8A3D]",

@@ -23,11 +23,13 @@ import {
 import { PesertaSchema } from "@/validations/peserta";
 import { createRegistration } from "@/servers/register-action";
 import { toast } from "sonner";
+import { useState } from "react";
 
 export function RegistForm({
   className,
   ...props
 }: React.ComponentProps<"form">) {
+  const [isLoading, setIsLoading] = useState(false);
   const form = useForm<z.infer<typeof PesertaSchema>>({
     resolver: zodResolver(PesertaSchema),
     defaultValues: {
@@ -77,17 +79,25 @@ export function RegistForm({
   ];
 
   const facultiesValue = form.watch("fakultas");
-
   const selectedFaculty = faculties.find((f) => f.nama === facultiesValue);
-
   const programStudi = selectedFaculty?.prodi ?? [];
 
   const onSubmit = async (data: z.infer<typeof PesertaSchema>) => {
+    setIsLoading(true);
     const result = await createRegistration(data);
-
-    if (!result.success) {
+    if (result.success) {
+      toast.success("Berhasil Mendaftar");
+      form.reset({
+        nim: "",
+        email: "",
+        nama: "",
+        fakultas: "",
+        prodi: "",
+      });
+    } else {
       toast.error(result.message);
-    } else toast.success(result.message);
+    }
+    setIsLoading(false);
   };
 
   return (
@@ -114,6 +124,7 @@ export function RegistForm({
                 {...field}
                 id="nim"
                 type="number"
+                disabled={isLoading}
                 placeholder="Contoh: 240400123"
                 onWheel={(e) => e.currentTarget.blur()}
                 className="bg-background"
@@ -136,6 +147,7 @@ export function RegistForm({
                 {...field}
                 id="email"
                 type="email"
+                disabled={isLoading}
                 placeholder="Contoh: seseorang@email.com"
                 className="bg-background"
                 aria-invalid={fieldState.invalid}
@@ -157,6 +169,7 @@ export function RegistForm({
                 {...field}
                 id="nama"
                 type="text"
+                disabled={isLoading}
                 placeholder="Contoh: Syafiq Sumba Samba"
                 className="bg-background"
                 aria-invalid={fieldState.invalid}
@@ -178,10 +191,14 @@ export function RegistForm({
                 value={field.value}
                 onValueChange={(value) => {
                   field.onChange(value);
-                  form.setValue("prodi", "", { shouldValidate: true });
+                  form.setValue("prodi", "");
                 }}
               >
-                <SelectTrigger id="fakultas" aria-invalid={fieldState.invalid}>
+                <SelectTrigger
+                  disabled={isLoading}
+                  id="fakultas"
+                  aria-invalid={fieldState.invalid}
+                >
                   <SelectValue placeholder="Pilih Fakultas" />
                 </SelectTrigger>
                 <SelectContent>
@@ -208,7 +225,7 @@ export function RegistForm({
             <Field>
               <FieldLabel htmlFor="prodi">Prodi</FieldLabel>
               <Select
-                disabled={!facultiesValue}
+                disabled={!facultiesValue || isLoading}
                 value={field.value}
                 onValueChange={field.onChange}
               >
@@ -240,8 +257,10 @@ export function RegistForm({
             </Field>
           )}
         />
-        <Button type="submit">Daftar sebagai Peserta</Button>
-        <Field></Field>
+
+        <Button disabled={isLoading} type="submit">
+          {isLoading ? "Mengirim" : "Daftar Sebagai Peserta"}
+        </Button>
       </FieldGroup>
     </form>
   );

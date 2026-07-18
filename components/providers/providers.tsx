@@ -5,7 +5,7 @@ import { Toaster } from "@/components/ui/sonner";
 
 export function Providers({ children }: { children: ReactNode }): ReactNode {
   return (
-    <ThemeProvider defaultTheme="light" enableSystem={false}>
+    <ThemeProvider defaultTheme="light">
       <SmoothScroll>
         <Toaster richColors position="top-right" />
         {children}

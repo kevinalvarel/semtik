@@ -1,66 +1,84 @@
-"use client"
+"use client";
 
-import { Clock, User, ChevronRight } from "lucide-react"
+import { Clock, User, ChevronRight } from "lucide-react";
 
 interface Session {
-  time: string
-  title: string
-  speaker?: string
-  description: string
-  color: string
-  trackInfo?: string
+  time: string;
+  title: string;
+  speaker?: string;
+  description: string;
+  color: string;
+  trackInfo?: string;
 }
 
 const sessions: Session[] = [
   {
-    time: "08:00 - 09:00",
-    title: "REGISTRASI & OPENING CEREMONY",
-    speaker: "MC & Welcoming Dance Panel",
-    description: "Registrasi ulang peserta, sambutan resmi dari rektorat dan ketua panitia, dilanjutkan persembahan tarian pembuka.",
+    time: "08:30 - 09:35",
+    title: "REGISTRASI, PEMBUKAAN & SAMBUTAN",
+    speaker: "MC, Dekan FIK & Rektor Universitas Al-Khairiyah",
+    description:
+      "Registrasi peserta, pembukaan oleh MC, menyanyikan lagu Indonesia Raya dan Mars Al-Khairiyah, pembacaan kalam ilahi, serta sambutan dari Dekan Fakultas Ilmu Komputer dan Rektor Universitas Al-Khairiyah.",
     color: "bg-[#FFE44D]",
   },
   {
-    time: "09:00 - 10:30",
-    title: "KEYNOTE SPEECH: SECURING THE AI REVOLUTION",
-    speaker: "Dr. Ir. Budi Rahardjo (ITB)",
-    description: "Membahas lanskap keamanan cyber nasional, kerentanan sistem kecerdasan buatan, serta strategi perlindungan privasi data.",
+    time: "09:35 - 10:30",
+    title: "SESI I: PERSONAL GROWTH",
+    speaker: "Ali Bahtiar (Influencer)",
+    description:
+      "Membahas pentingnya pengembangan diri, membangun personal branding, meningkatkan produktivitas, serta mempersiapkan diri menghadapi tantangan di era digital.",
     color: "bg-[#5B8CFF]",
   },
   {
-    time: "10:30 - 12:00",
-    title: "PANEL DISCUSSION: SCALING INFRASTRUCTURE & ARCHITECTURE",
-    speaker: "Amanda Cole (SkyCompute) & Farah Salsabila (DecaTech)",
-    description: "Diskusi panel interaktif mengenai arsitektur cloud-native yang skalabel, tren microservices, dan keandalan sistem berskala besar.",
+    time: "10:30 - 10:45",
+    title: "TANYA JAWAB SESI I",
+    speaker: "Moderator",
+    description:
+      "Diskusi interaktif antara peserta dan narasumber terkait materi Personal Growth yang telah disampaikan.",
     color: "bg-[#FF6B9D]",
   },
   {
-    time: "12:00 - 13:00",
-    title: "ISHOMA & NETWORKING SESSION",
-    description: "Istirahat, sholat, makan siang, dan sesi khusus networking di networking lounge bersama pembicara dan sponsor partner.",
+    time: "10:48 - 11:40",
+    title: "SESI II: TECH INNOVATION",
+    speaker: "Ariq (CEO)",
+    description:
+      "Membahas perkembangan teknologi terkini, inovasi digital, pemanfaatan kecerdasan buatan, serta peluang dan tantangan transformasi teknologi di masa depan.",
     color: "bg-[#55E6A5]",
   },
   {
-    time: "13:00 - 15:30",
-    title: "PARALLEL WORKSHOP SESSION (PILIH SATU TRACK)",
-    description: "Sesi praktik mendalam yang dipandu langsung oleh instruktur profesional. Laptop wajib dibawa untuk sesi ini.",
-    trackInfo: "Track A: MLOps Practical Implementation | Track B: Cloud Security Compliance Audit",
+    time: "11:40 - 11:55",
+    title: "TANYA JAWAB SESI II",
+    speaker: "Moderator",
+    description:
+      "Sesi tanya jawab dan diskusi terbuka bersama narasumber mengenai inovasi teknologi dan tren industri digital.",
     color: "bg-[#FF8A3D]",
   },
   {
-    time: "15:30 - 16:00",
-    title: "CLOSING CEREMONY & DOORPRIZES",
-    description: "Penyerahan sertifikat pembicara, pengumuman pemenang doorprize (Smartwatch, SSD, Merchandise), dan sesi foto bersama.",
+    time: "11:55 - 12:20",
+    title: "PENUTUP & APRESIASI NARASUMBER",
+    speaker: "Panitia & Fakultas Ilmu Komputer",
+    description:
+      "Pemberian sertifikat dan plakat kepada narasumber sebagai bentuk apresiasi atas kontribusi dalam seminar.",
     color: "bg-[#FFE44D]",
   },
-]
+  {
+    time: "12:20 - 12:50",
+    title: "DOA & NETWORKING",
+    speaker: "Panitia & Seluruh Peserta",
+    description:
+      "Sesi foto bersama, pembacaan doa penutup, serta pengisian presensi sebagai penutup rangkaian acara seminar.",
+    color: "bg-[#5B8CFF]",
+  },
+];
 
 export function Schedule() {
   return (
-    <section id="agenda" className="relative overflow-hidden border-b-4 border-black bg-white py-16 lg:py-24 select-none">
+    <section
+      id="agenda"
+      className="relative overflow-hidden border-b-4 border-black bg-white py-16 lg:py-24 select-none"
+    >
       <div className="absolute inset-0 bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:24px_24px] opacity-5 pointer-events-none" />
 
       <div className="relative mx-auto max-w-4xl px-4 sm:px-6">
-        
         {/* Section Header */}
         <div className="text-center mb-16">
           <span className="w-fit border-2 border-black bg-[#FF8A3D] px-3 py-1 text-xs font-mono font-bold uppercase tracking-wider text-black shadow-[2px_2px_0px_0px_#000] mb-4 inline-block">
@@ -70,16 +88,15 @@ export function Schedule() {
             AGENDA ACARA
           </h2>
           <p className="mt-4 text-sm sm:text-base font-bold text-black border-2 border-black bg-[#FFE44D] p-3 inline-block shadow-[3px_3px_0px_0px_#000]">
-            Sabtu, 24 Oktober 2026. Jadwal dirancang agar padat wawasan dan interaktif.
+            Sabtu, 24 Oktober 2026. Jadwal dirancang agar padat wawasan dan
+            interaktif.
           </p>
         </div>
 
         {/* Timeline Container */}
         <div className="relative border-l-4 border-black ml-4 sm:ml-32 pl-6 sm:pl-10 space-y-12 pb-4">
-          
           {sessions.map((session, idx) => (
             <div key={idx} className="relative group">
-              
               {/* Timeline dot/badge with absolute positioning */}
               <div className="absolute -left-[35px] sm:-left-[171px] top-1.5 flex items-center justify-center">
                 {/* Time Indicator for Desktop */}
@@ -91,8 +108,9 @@ export function Schedule() {
               </div>
 
               {/* Session Card */}
-              <div className={`neo-card-interactive ${session.color} p-6 sm:p-8 cursor-default`}>
-                
+              <div
+                className={`neo-card-interactive ${session.color} p-6 sm:p-8 cursor-default`}
+              >
                 {/* Time Badge (Mobile-only indicator) */}
                 <div className="sm:hidden flex items-center gap-1.5 border-2 border-black bg-white px-2.5 py-0.5 text-xs font-mono font-bold uppercase text-black shadow-[1.5px_1.5px_0px_0px_#000] w-fit mb-3">
                   <Clock className="size-3.5" />
@@ -138,13 +156,10 @@ export function Schedule() {
                   </div>
                 )}
               </div>
-
             </div>
           ))}
-
         </div>
-
       </div>
     </section>
-  )
+  );
 }

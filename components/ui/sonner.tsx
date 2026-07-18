@@ -27,7 +27,7 @@ const Toaster = ({ ...props }: ToasterProps) => {
       toastOptions={{
         classNames: {
           toast:
-            "!border-4 !border-black !bg-white !text-black !rounded-none !font-bold !shadow-[6px_6px_0px_0px_#000]",
+            "!border-4 !border-black !text-black !rounded-none !font-bold !shadow-[6px_6px_0px_0px_#000]",
 
           title: "!font-black !text-black",
 

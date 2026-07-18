@@ -2,14 +2,7 @@
 
 import { Decoration } from "@/components/daftar-seminar/decoration";
 import { RegistForm } from "@/components/daftar-seminar/regist-form";
-import {
-  ArrowLeft,
-  Sparkles,
-  Terminal,
-  Shield,
-  Cpu,
-  Code2,
-} from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 
 export default function SignupPage() {
