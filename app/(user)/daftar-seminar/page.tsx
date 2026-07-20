@@ -5,7 +5,7 @@ import { RegistForm } from "@/components/daftar-seminar/regist-form";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 
-export default function SignupPage() {
+export default function DaftarSeminar() {
   return (
     <div className="grid min-h-svh lg:grid-cols-2">
       <div className="flex flex-col gap-4 p-6 md:p-10 neo-card bg-white z-1">
