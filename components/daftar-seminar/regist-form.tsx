@@ -23,12 +23,14 @@ import {
 import { PesertaSchema } from "@/validations/peserta";
 import { createRegistration } from "@/servers/register-action";
 import { toast } from "sonner";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export function RegistForm({
   className,
   ...props
 }: React.ComponentProps<"form">) {
+  const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
   const form = useForm<z.infer<typeof PesertaSchema>>({
     resolver: zodResolver(PesertaSchema),
@@ -94,6 +96,7 @@ export function RegistForm({
         fakultas: "",
         prodi: "",
       });
+      router.push("/daftar-seminar/berhasil");
     } else {
       toast.error(result.message);
     }

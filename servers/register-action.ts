@@ -3,16 +3,21 @@
 import { db } from "@/drizzle";
 import { registration } from "@/db/schema";
 import { PesertaSchema } from "@/validations/peserta";
+import { randomUUID } from "crypto";
 
 export async function createRegistration(payload: PesertaSchema) {
-  const existingData = await db.query.registration.findFirst({
+  const existingNim = await db.query.registration.findFirst({
     where: { nim: { eq: Number(payload.nim) } },
   });
 
-  if (existingData) {
+  const existingEmail = await db.query.registration.findFirst({
+    where: { email: { eq: payload.email } },
+  });
+
+  if (existingNim || existingEmail) {
     return {
       success: false,
-      message: "Pendaftaran Gagal, NIM Sudah Terdaftar!",
+      message: "Pendaftaran Gagal, NIM atau Email Sudah Terdaftar!",
     };
   }
 
@@ -25,7 +30,6 @@ export async function createRegistration(payload: PesertaSchema) {
       errors: parsed.error.flatten(),
     };
   }
-
   try {
     await db.insert(registration).values({
       nim: Number(parsed.data.nim),
@@ -33,6 +37,10 @@ export async function createRegistration(payload: PesertaSchema) {
       nama: parsed.data.nama,
       fakultas: parsed.data.fakultas,
       prodi: parsed.data.prodi as string,
+      isCheckedIn: false,
+      qrCode: randomUUID(),
+      createdAt: new Date(),
+      checkedInAt: null,
     });
 
     return {
