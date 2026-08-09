@@ -1,9 +1,9 @@
-"use server";
+'use server';
 
-import { db } from "@/drizzle";
-import { registration } from "@/db/schema";
-import { PesertaSchema } from "@/validations/peserta";
-import { randomUUID } from "crypto";
+import { db } from '@/drizzle';
+import { registration } from '@/db/schema';
+import { PesertaSchema } from '@/validations/peserta';
+import { randomUUID } from 'crypto';
 
 export async function createRegistration(payload: PesertaSchema) {
   const existingNim = await db.query.registration.findFirst({
@@ -17,7 +17,7 @@ export async function createRegistration(payload: PesertaSchema) {
   if (existingNim || existingEmail) {
     return {
       success: false,
-      message: "Pendaftaran Gagal, NIM atau Email Sudah Terdaftar!",
+      message: 'Pendaftaran Gagal, NIM atau Email Sudah Terdaftar!',
     };
   }
 
@@ -26,7 +26,7 @@ export async function createRegistration(payload: PesertaSchema) {
   if (!parsed.success) {
     return {
       success: false,
-      message: "Pendaftaran Gagal, Data Tidak Valid",
+      message: 'Pendaftaran Gagal, Data Tidak Valid',
       errors: parsed.error.flatten(),
     };
   }
@@ -45,12 +45,12 @@ export async function createRegistration(payload: PesertaSchema) {
 
     return {
       success: true,
-      message: "Pendaftaran Berhasil!",
+      message: 'Pendaftaran Berhasil!',
     };
   } catch (err) {
     return {
       success: false,
-      message: "Pendaftaran Gagal, Terjadi Kesalahan pada Server",
+      message: 'Pendaftaran Gagal, Terjadi Kesalahan pada Server',
     };
   }
 }
