@@ -1,19 +1,29 @@
-"use client";
+'use client';
 
-import { motion } from "motion/react";
-import { Calendar, MapPin, Users, ArrowRight } from "lucide-react";
-import Image from "next/image";
-import { FaArrowUp, FaStar } from "react-icons/fa";
-import Link from "next/link";
-import DotField from "@/components/animated/DotField";
+import { motion, useTransform } from 'motion/react';
+import { ArrowRight, Calendar, MapPin, Users } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
+import DotField from '@/components/animated/DotField';
+import { MotionValue } from 'motion';
 
-export function Hero() {
+export function Hero({
+  scrollYProgress,
+}: {
+  scrollYProgress: MotionValue<number>;
+}) {
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.8]);
+  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0.1]);
+  const rotate = useTransform(scrollYProgress, [0, 1], [0, 30]);
   return (
-    <section className="relative overflow-hidden border-b-4 border-black bg-white py-16 :py-20 3xl:py-28 select-none">
+    <motion.section
+      style={{ opacity, scale }}
+      className='sticky top-0 min-h-screen lg:h-screen overflow-y-auto lg:overflow-hidden border-b-4 border-black bg-white select-none py-[clamp(1rem,2.5vh,3rem)] flex items-center'
+    >
       {/* Grid background */}
-      <div className="absolute inset-0 z-0">
+      <div className='absolute inset-0 z-0'>
         <DotField
-          className="absolute inset-0 pointer-events-none"
+          className='absolute inset-0 pointer-events-none'
           dotRadius={1.5}
           dotSpacing={14}
           bulgeStrength={67}
@@ -21,106 +31,109 @@ export function Hero() {
           sparkle={false}
           waveAmplitude={0}
           cursorRadius={500}
-          gradientFrom="#111111"
-          gradientTo="#5795d9"
+          gradientFrom='#111111'
+          gradientTo='#5795d9'
           cursorForce={0.1}
           bulgeOnly
         />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-center">
-          {/* Left Column: Title and CTAs */}
-          <div className="lg:col-span-7 flex flex-col justify-center">
+      <div className='relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full'>
+        <div className='grid grid-cols-1 gap-[clamp(1.25rem,2.5vw,2.5rem)] lg:grid-cols-12 lg:items-center'>
+          <div className='lg:col-span-7 flex flex-col justify-center items-center md:items-start'>
             {/* Huge Headline */}
-            <h1 className="text-4xl sm:text-7xl font-black tracking-tight text-black uppercase leading-none">
-              <div className="flex flex-row gap-4">
-                <span className="block bg-neo-pink border-4 border-black px-4 py-2 w-fit shadow-[4px_4px_0px_0px_#000] rotate-[-1deg] mb-3">
+            <h1 className='text-center md:text-start font-black tracking-tight text-black uppercase leading-none'>
+              <div className='flex flex-row flex-wrap gap-[clamp(0.5rem,1.2vw,1rem)] justify-center md:justify-start'>
+                <span className='inline-block bg-neo-pink border-3 sm:border-4 border-black px-[clamp(0.75rem,1.8vw,1.25rem)] py-[clamp(0.25rem,0.6vw,0.5rem)] text-[clamp(1.25rem,3.2vw,2.5rem)] font-black shadow-[3px_3px_0px_0px_#000] sm:shadow-[4px_4px_0px_0px_#000] rotate-[-1deg] mb-[clamp(0.25rem,0.8vh,0.5rem)] transition-transform hover:rotate-0'>
                   SEMTIK
                 </span>
-                <span className="block bg-neo-yellow border-4 border-black px-4 py-2 w-fit shadow-[4px_4px_0px_0px_#000] rotate-[1deg] mb-3">
+                <span className='inline-block bg-neo-yellow border-3 sm:border-4 border-black px-[clamp(0.75rem,1.8vw,1.25rem)] py-[clamp(0.25rem,0.6vw,0.5rem)] text-[clamp(1.25rem,3.2vw,2.5rem)] font-black shadow-[3px_3px_0px_0px_#000] sm:shadow-[4px_4px_0px_0px_#000] rotate-[1deg] mb-[clamp(0.25rem,0.8vh,0.5rem)] transition-transform hover:rotate-0'>
                   2026
                 </span>
               </div>
-              <span className="block text-4xl sm:text-[50px] font-black text-black mt-2">
+              <span className='block text-[clamp(1.5rem,3.8vw,3.25rem)] font-black text-black mt-[clamp(0.35rem,0.8vh,0.75rem)] leading-[1.1] tracking-tight'>
                 Seminar Informatika 2026
               </span>
             </h1>
 
             {/* Supporting Text */}
-            <p className="mt-8 max-w-2xl text-lg sm:text-xl font-medium leading-relaxed text-black border-l-4 border-black pl-4">
+            <p className='mt-[clamp(0.875rem,2vh,1.75rem)] max-w-2xl text-[clamp(0.875rem,1.2vw,1.25rem)] font-medium leading-relaxed text-black border-l-4 border-black pl-[clamp(0.75rem,1.5vw,1.25rem)]'>
               Menyelaraskan pengembangan diri dengan inovasi teknologi. Saatnya
               tingkatkan potensi, kuasai tren digital terkini, dan bangun dampak
               nyata bersama para praktisi industri.
             </p>
 
             {/* Actions */}
-            <div className="mt-10 flex flex-wrap gap-4">
+            <div className='mt-[clamp(1rem,2.2vh,2.25rem)] flex flex-wrap gap-[clamp(0.75rem,1.5vw,1.25rem)]'>
               <Link
-                href="/daftar-seminar"
-                className="neo-btn bg-neo-yellow text-base group gap-2"
+                href='/daftar-seminar'
+                className='neo-btn bg-neo-yellow text-[clamp(0.875rem,1.1vw,1.125rem)] group gap-2 px-[clamp(1rem,1.8vw,1.5rem)] py-[clamp(0.5rem,1vh,0.875rem)]'
               >
                 Daftar Sekarang
-                <ArrowRight className="size-5 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className='size-5 transition-transform group-hover:translate-x-1' />
               </Link>
               <Link
-                href="#agenda"
-                className="neo-btn bg-white hover:bg-muted text-base"
+                href='#agenda'
+                className='neo-btn bg-white hover:bg-muted text-[clamp(0.875rem,1.1vw,1.125rem)] px-[clamp(1rem,1.8vw,1.5rem)] py-[clamp(0.5rem,1vh,0.875rem)]'
               >
                 Lihat Agenda
               </Link>
             </div>
 
             {/* Info Cards Grid */}
-            <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-3">
+            <div className='hidden mt-[clamp(1.25rem,2.5vh,2.5rem)] md:grid grid-cols-1 gap-[clamp(0.65rem,1.2vw,1.25rem)] sm:grid-cols-3'>
               {/* Date Card */}
-              <div className="neo-card bg-neo-blue">
-                <Calendar className="size-6 text-black mb-2" />
-                <h3 className="font-mono text-xs uppercase font-bold text-black/85">
-                  Waktu
-                </h3>
-                <p className="font-black text-base text-black mt-1 leading-tight">
-                  16 Desember 2026
-                </p>
-                <p className="font-mono text-xs text-black/75 mt-0.5">
+              <div className='neo-card bg-neo-blue p-[clamp(0.65rem,1.2vw,1.25rem)] flex flex-col justify-between hover:-translate-y-1 transition-transform'>
+                <div>
+                  <Calendar className='size-[clamp(1.125rem,1.8vw,1.5rem)] text-black mb-1' />
+                  <h3 className='font-mono text-[clamp(0.65rem,0.85vw,0.75rem)] uppercase font-bold text-black/85'>
+                    Waktu
+                  </h3>
+                  <p className='font-black text-[clamp(0.85rem,1.1vw,1rem)] text-black mt-0.5 leading-tight'>
+                    16 Desember 2026
+                  </p>
+                </div>
+                <p className='font-mono text-[clamp(0.65rem,0.8vw,0.75rem)] text-black/75 mt-0.5'>
                   08:30 - 12:50 WIB
                 </p>
               </div>
 
               {/* Location Card */}
-              <div className="neo-card bg-[#55E6A5]">
-                <MapPin className="size-6 text-black mb-2" />
-                <h3 className="font-mono text-xs uppercase font-bold text-black/85">
-                  Lokasi
-                </h3>
-                <p className="font-black text-base text-black mt-1 leading-tight">
-                  Gedung Serba Guna Universitas Al-Khairiyah
-                </p>
-                <p className="font-mono text-xs text-black/75 mt-0.5">
+              <div className='neo-card bg-[#55E6A5] p-[clamp(0.65rem,1.2vw,1.25rem)] flex flex-col justify-between hover:-translate-y-1 transition-transform'>
+                <div>
+                  <MapPin className='size-[clamp(1.125rem,1.8vw,1.5rem)] text-black mb-1' />
+                  <h3 className='font-mono text-[clamp(0.65rem,0.85vw,0.75rem)] uppercase font-bold text-black/85'>
+                    Lokasi
+                  </h3>
+                  <p className='font-black text-[clamp(0.85rem,1.1vw,1rem)] text-black mt-0.5 leading-tight'>
+                    Gedung Serba Guna Universitas Al-Khairiyah
+                  </p>
+                </div>
+                <p className='font-mono text-[clamp(0.65rem,0.8vw,0.75rem)] text-black/75 mt-0.5'>
                   Cilegon, Banten
                 </p>
               </div>
 
               {/* Quota Card */}
-              <div className="neo-card bg-[#FF8A3D] flex flex-col justify-between">
+              <div className='neo-card bg-[#FF8A3D] p-[clamp(0.65rem,1.2vw,1.25rem)] flex flex-col justify-between hover:-translate-y-1 transition-transform'>
                 <div>
-                  <Users className="size-6 text-black mb-2" />
-                  <h3 className="font-mono text-xs uppercase font-bold text-black/85">
+                  <Users className='size-[clamp(1.125rem,1.8vw,1.5rem)] text-black mb-1' />
+                  <h3 className='font-mono text-[clamp(0.65rem,0.85vw,0.75rem)] uppercase font-bold text-black/85'>
                     Sisa Kuota
                   </h3>
-                  <p className="font-black text-base text-black mt-1 leading-tight">
+                  <p className='font-black text-[clamp(0.85rem,1.1vw,1rem)] text-black mt-0.5 leading-tight'>
                     250 Kursi
                   </p>
                 </div>
                 {/* Progress bar */}
-                <div className="mt-3">
-                  <div className="h-4 w-full border-2 border-black bg-white overflow-hidden">
+                <div className='mt-1.5'>
+                  <div className='h-3.5 w-full border-2 border-black bg-white overflow-hidden'>
                     <div
-                      className="h-full bg-[#55E6A5]"
-                      style={{ width: "0%" }}
+                      className='h-full bg-[#55E6A5]'
+                      style={{ width: '0%' }}
                     />
                   </div>
-                  <div className="flex justify-between font-mono text-[10px] font-bold text-black mt-1">
+                  <div className='flex justify-between font-mono text-[clamp(0.55rem,0.75vw,0.65rem)] font-bold text-black mt-0.5'>
                     <span>0% Terisi</span>
                     <span>Ayo Daftar!</span>
                   </div>
@@ -130,83 +143,30 @@ export function Hero() {
           </div>
 
           {/* Right Column: Neo-Brutalist Visual Canvas */}
-          <div className="lg:col-span-5 relative flex justify-center items-center py-6">
-            <div className="relative w-full max-w-[400px] aspect-square border-4 border-black bg-white shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] overflow-hidden flex flex-col items-center justify-center p-8">
+          <motion.div
+            style={{ scale, rotate }}
+            className='lg:col-span-5 relative flex justify-center items-center'
+          >
+            <div className='relative w-full max-w-[clamp(220px,26vw,350px)] aspect-square border-3 sm:border-4 border-black bg-white shadow-[6px_6px_0px_0px_#000] sm:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] overflow-hidden flex flex-col items-center justify-center p-[clamp(0.875rem,2vw,2rem)]'>
               {/* Central badge */}
               <motion.div
                 initial={{ scale: 0.8, rotate: -5 }}
                 animate={{ scale: 1, rotate: 2 }}
-                transition={{ duration: 0.5, type: "spring" }}
-                className="relative z-10 border-4 border-black bg-[#FFE44D] p-6 text-center shadow-[6px_6px_0px_0px_#000] rotate-2 cursor-pointer hover:rotate-[-2deg] transition-all"
+                transition={{ duration: 0.5, type: 'spring' }}
+                className='relative z-10 border-3 sm:border-4 border-black bg-[#FFE44D] p-[clamp(0.75rem,1.8vw,1.5rem)] text-center shadow-[4px_4px_0px_0px_#000] sm:shadow-[6px_6px_0px_0px_#000] rotate-2 cursor-pointer hover:rotate-[-2deg] transition-all'
               >
                 <Image
-                  src="/images/logo.png"
-                  alt="Hero"
+                  src='/images/logo.png'
+                  alt='Hero'
                   width={200}
                   height={200}
+                  className='w-[clamp(90px,13vw,170px)] h-auto object-contain'
                 />
               </motion.div>
-
-              {/* Floating Shape: Star */}
-              <motion.div
-                animate={{
-                  y: [0, -10, 0],
-                  rotate: [0, 360],
-                }}
-                transition={{
-                  y: { repeat: Infinity, duration: 3, ease: "easeInOut" },
-                  rotate: { repeat: Infinity, duration: 12, ease: "linear" },
-                }}
-                className="absolute top-8 left-8 z-20 text-black pointer-events-none"
-              >
-                <FaStar className="size-12 fill-[#5B8CFF] stroke-black stroke-[20]" />
-              </motion.div>
-
-              {/* Floating Shape: Arrow */}
-              <motion.div
-                animate={{
-                  x: [0, 8, 0],
-                  y: [0, -8, 0],
-                }}
-                transition={{
-                  repeat: Infinity,
-                  duration: 2.5,
-                  ease: "easeInOut",
-                }}
-                className="absolute bottom-8 right-8 z-20 text-black pointer-events-none"
-              >
-                <FaArrowUp className="size-12 fill-[#5B8CFF] stroke-black stroke-[20]" />
-              </motion.div>
-
-              {/* Floating Shape: Circle Accent */}
-              <motion.div
-                animate={{
-                  scale: [0.95, 1.05, 0.95],
-                }}
-                transition={{
-                  repeat: Infinity,
-                  duration: 2,
-                  ease: "easeInOut",
-                }}
-                className="absolute bottom-10 left-10 z-0 size-16 rounded-full border-4 border-black bg-[#55E6A5] opacity-80"
-              />
-
-              {/* Floating Shape: Orange Square */}
-              <motion.div
-                animate={{
-                  rotate: [15, -15, 15],
-                }}
-                transition={{
-                  repeat: Infinity,
-                  duration: 4,
-                  ease: "easeInOut",
-                }}
-                className="absolute top-10 right-10 z-0 size-14 border-4 border-black bg-[#FF8A3D] -rotate-12"
-              />
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
