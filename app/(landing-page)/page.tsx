@@ -9,6 +9,7 @@ import { RegistrationCTA } from '@/components/landing/cta';
 import { FAQ } from '@/components/landing/faq';
 import { useRef } from 'react';
 import { useScroll } from 'motion/react';
+import { Footer } from '@/components/landing/footer';
 
 export default function LandingPage() {
   const container = useRef<HTMLDivElement>(null);
@@ -28,6 +29,7 @@ export default function LandingPage() {
         <Sponsors />
         <RegistrationCTA />
         <FAQ />
+        <Footer />
       </main>
     </>
   );
