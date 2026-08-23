@@ -3,7 +3,8 @@
 import { Card } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa6';
+import { FaGithub, FaLinkedin, FaTiktok } from 'react-icons/fa6';
+import Image from 'next/image';
 // Custom SVG icons to bypass lucide-react brand icon limitations
 
 interface Speaker {
@@ -18,6 +19,7 @@ interface Speaker {
     twitter?: string;
     linkedin?: string;
     github?: string;
+    tiktok?: string;
   };
 }
 
@@ -27,13 +29,12 @@ const speakers: Speaker[] = [
     position: 'Content Creator',
     company: 'TIKTOK',
     expertise: 'Influencer',
-    image:
-      'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80',
+    image: '/images/ali.webp',
     color: 'bg-[#55E6A5]',
     fallback: 'AR',
     socials: {
-      twitter: '#',
-      github: '#',
+      linkedin: 'https://www.linkedin.com/in/ali-reza-bahtiar/',
+      tiktok: 'https://www.tiktok.com/@alzabaarrr',
     },
   },
   {
@@ -41,13 +42,12 @@ const speakers: Speaker[] = [
     position: 'Fullstack Software Engineer',
     company: 'Flyrank AI',
     expertise: 'Software Engineer',
-    image:
-      'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&auto=format&fit=crop&q=80',
+    image: '/images/kevin.webp',
     color: 'bg-[#FF8A3D]',
     fallback: 'FS',
     socials: {
-      linkedin: '#',
-      github: '#',
+      linkedin: 'https://www.linkedin.com/in/muhammadkevinalvarel/',
+      github: 'https://github.com/kevinalvarel',
     },
   },
 ];
@@ -85,14 +85,12 @@ export function Speakers() {
                 {/* Speaker Avatar container */}
                 <div className='relative flex  justify-center mb-6'>
                   <Avatar className='relative z-10 size-24 rounded-none border-4 border-black bg-white'>
-                    <AvatarImage
+                    <Image
                       src={speaker.image}
                       alt={speaker.name}
-                      className='rounded-none'
+                      width={96}
+                      height={96}
                     />
-                    <AvatarFallback className='rounded-none font-mono font-black text-xl text-black'>
-                      {speaker.fallback}
-                    </AvatarFallback>
                   </Avatar>
                 </div>
 
@@ -120,15 +118,6 @@ export function Speakers() {
 
               {/* Social Icons */}
               <div className='flex justify-center gap-3 mt-6 pt-4 border-t-2 border-black border-dashed'>
-                {speaker.socials.twitter && (
-                  <a
-                    href={speaker.socials.twitter}
-                    className='border-2 border-black bg-white p-1.5 hover:-translate-y-0.5 hover:bg-[#FFE44D] active:translate-y-0 transition-all shadow-[1.5px_1.5px_0px_0px_#000]'
-                    aria-label='Twitter'
-                  >
-                    <FaTwitter className='size-4 text-black' />
-                  </a>
-                )}
                 {speaker.socials.linkedin && (
                   <a
                     href={speaker.socials.linkedin}
@@ -145,6 +134,15 @@ export function Speakers() {
                     aria-label='GitHub'
                   >
                     <FaGithub className='size-4 text-black' />
+                  </a>
+                )}
+                {speaker.socials.tiktok && (
+                  <a
+                    href={speaker.socials.tiktok}
+                    className='border-2 border-black bg-white p-1.5 hover:-translate-y-0.5 hover:bg-[#55E6A5] active:translate-y-0 transition-all shadow-[1.5px_1.5px_0px_0px_#000]'
+                    aria-label='TikTok'
+                  >
+                    <FaTiktok className='size-4 text-black' />
                   </a>
                 )}
               </div>

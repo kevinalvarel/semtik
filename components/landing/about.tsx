@@ -49,12 +49,14 @@ export function About() {
             {/* Description */}
             <div className='mt-8 space-y-6 text-base sm:text-lg font-medium text-black leading-relaxed'>
               <p>
-                <strong>SEMTIK (Seminar Informatika) 2026</strong> kembali hadir
-                sebagai ruang untuk berbagi, berdiskusi, dan terhubung dengan
-                berbagai perspektif di dunia teknologi. Menghadirkan pembicara
-                dengan pengalaman di bidangnya, SEMTIK menjadi tempat untuk
-                mendapatkan insight langsung dari perjalanan dan pengalaman
-                mereka di dunia teknologi.
+                <strong>
+                  SEMTIK (Seminar Nasional Teknik Informatika) 2026
+                </strong>{' '}
+                kembali hadir sebagai ruang untuk berbagi, berdiskusi, dan
+                terhubung dengan berbagai perspektif di dunia teknologi.
+                Menghadirkan pembicara dengan pengalaman di bidangnya, SEMTIK
+                menjadi tempat untuk mendapatkan insight langsung dari
+                perjalanan dan pengalaman mereka di dunia teknologi.
               </p>
 
               <p className='border-l-4 border-black pl-4 bg-gray-50 py-2 pr-2'>
@@ -84,8 +86,7 @@ export function About() {
                 Tema SEMTIK 2026
               </p>
               <p className='text-base sm:text-lg font-black text-black mt-1'>
-                &ldquo;Build Your Impact: Aligning Personal Growth with Tech
-                Innovation&rdquo;
+                &ldquo;Elevating Personal Skills Through AI Innovation&rdquo;
               </p>
             </div>
           </div>

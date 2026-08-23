@@ -65,7 +65,7 @@ export function Schedule() {
             AGENDA ACARA
           </h2>
           <p className='mt-4 text-sm sm:text-base font-bold text-black border-2 border-black bg-[#FFE44D] p-3 inline-block shadow-[3px_3px_0px_0px_#000]'>
-            Minggu, 16 Desember 2026. Jadwal dirancang agar padat wawasan dan
+            Minggu, 13 Desember 2026. Jadwal dirancang agar padat wawasan dan
             interaktif.
           </p>
         </div>

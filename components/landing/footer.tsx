@@ -31,7 +31,7 @@ export function Footer() {
           <div className='md:col-span-1 flex flex-col gap-4'>
             <NavbarLogo />
             <p className='text-sm font-bold text-gray-400 leading-relaxed'>
-              Seminar Informatika tahun 2026, menghadirkan penjelasan sekaligus
+              Seminar Nasional Teknik Informatika tahun 2026, menghadirkan penjelasan sekaligus
               praktik langsung terkait dengan penggunaan AI.
             </p>
             <div className='flex items-center gap-1.5 font-mono text-[10px] font-bold text-neo-green uppercase'>

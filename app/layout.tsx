@@ -21,9 +21,9 @@ const fontArchitects = Architects_Daughter({
 });
 
 export const metadata: Metadata = {
-  title: "SEMTIK 2026 – Seminar Informatika Nasional",
+  title: "SEMTIK 2026 – Seminar Nasional Teknik Informatika",
   description:
-    "Seminar Informatika 2026 (SEMTIK). Eksplorasi kemampuan kamu dan tingkatkan wawasanmu",
+    "Seminar Nasional Teknik Informatika 2026 (SEMTIK). Eksplorasi kemampuan kamu dan tingkatkan wawasanmu",
 };
 
 export default function RootLayout({

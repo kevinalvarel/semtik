@@ -52,7 +52,7 @@ export function Hero({
                 </span>
               </div>
               <span className='block text-[clamp(1.5rem,3.8vw,3.25rem)] font-black text-black mt-[clamp(0.35rem,0.8vh,0.75rem)] leading-[1.1] tracking-tight'>
-                Seminar Informatika 2026
+                Seminar Nasional Teknik Informatika 2026
               </span>
             </h1>
 
@@ -90,7 +90,7 @@ export function Hero({
                     Waktu
                   </h3>
                   <p className='font-black text-[clamp(0.85rem,1.1vw,1rem)] text-black mt-0.5 leading-tight'>
-                    16 Desember 2026
+                    13 Desember 2026
                   </p>
                 </div>
                 <p className='font-mono text-[clamp(0.65rem,0.8vw,0.75rem)] text-black/75 mt-0.5'>
