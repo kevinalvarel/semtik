@@ -106,7 +106,7 @@ export function Hero({
                     Lokasi
                   </h3>
                   <p className='font-black text-[clamp(0.85rem,1.1vw,1rem)] text-black mt-0.5 leading-tight'>
-                    Gedung Serba Guna Universitas Al-Khairiyah
+                    Gedung Serba Guna, Universitas Al-Khairiyah
                   </p>
                 </div>
                 <p className='font-mono text-[clamp(0.65rem,0.8vw,0.75rem)] text-black/75 mt-0.5'>
@@ -122,7 +122,7 @@ export function Hero({
                     Sisa Kuota
                   </h3>
                   <p className='font-black text-[clamp(0.85rem,1.1vw,1rem)] text-black mt-0.5 leading-tight'>
-                    250 Kursi
+                    200 Kursi
                   </p>
                 </div>
                 {/* Progress bar */}
@@ -147,17 +147,15 @@ export function Hero({
             style={{ scale, rotate }}
             className='lg:col-span-5 relative flex justify-center items-center'
           >
-            <div className='relative w-full max-w-[clamp(220px,26vw,350px)] aspect-square border-3 sm:border-4 border-black bg-white shadow-[6px_6px_0px_0px_#000] sm:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] overflow-hidden flex flex-col items-center justify-center p-[clamp(0.875rem,2vw,2rem)]'>
+            <div className='relative w-full max-w-[clamp(220px,26vw,350px)] aspect-square border-3 sm:border-4 border-black bg-white shadow-[6px_6px_0px_0px_#000] sm:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] overflow-hidden md:flex flex-col items-center justify-center p-[clamp(0.875rem,2vw,2rem)] hidden'>
               {/* Central badge */}
-              <div className='relative z-10 border-3 sm:border-4 border-black bg-[#FFE44D] p-[clamp(0.75rem,1.8vw,1.5rem)] text-center shadow-[4px_4px_0px_0px_#000] sm:shadow-[6px_6px_0px_0px_#000] rotate-2 cursor-pointer hover:rotate-[-2deg] transition-all'>
-                <Image
-                  src='/images/logo.png'
-                  alt='Hero'
-                  width={200}
-                  height={200}
-                  className='w-[clamp(90px,13vw,170px)] h-auto object-contain'
-                />
-              </div>
+              <Image
+                src='/images/logo.png'
+                alt='Hero'
+                width={200}
+                height={200}
+                className=' w-[clamp(2200px,16vw,220px)] h-auto object-contain'
+              />
             </div>
           </motion.div>
         </div>

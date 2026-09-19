@@ -78,12 +78,12 @@ export function Footer() {
                 </span>
               </li>
               <li className='flex items-center gap-2.5'>
-                <Mail className='size-4 text-[#5B8CFF] shrink-0' />
+                <FaInstagram className='size-4 text-[#5B8CFF] shrink-0' />
                 <a
-                  href='mailto:info@semtik.org'
+                  href='https://www.instagram.com/semtik.26/'
                   className='hover:text-white transition-colors select-all'
                 >
-                  info@semtik.org
+                  semtik.26
                 </a>
               </li>
               <li className='flex items-center gap-2.5'>

@@ -115,7 +115,7 @@ export default function SuccessPage() {
                   <MapPin className='size-4 shrink-0 stroke-black stroke-[2] mt-0.5' />
                   <span className='text-black/60'>LOKASI:</span>
                   <span className='ml-auto text-right font-black text-neo-blue'>
-                    Gedung Sekretariat Daerah Kota Cilegon
+                    Gedung Serba Guna, Universitas Al-Khairiyah
                   </span>
                 </div>
               </motion.div>

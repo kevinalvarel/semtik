@@ -25,7 +25,7 @@ interface Speaker {
 
 const speakers: Speaker[] = [
   {
-    name: 'Ali Reza Bahtiar S.Kom',
+    name: 'Ali Reza Bahtiar',
     position: 'Content Creator',
     company: 'TIKTOK',
     expertise: 'Influencer',
