@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import DotField from '@/components/animated/DotField';
 import { MotionValue } from 'motion';
+import { ProgressBar } from './ui/progress-bar';
 
 export function Hero({
   scrollYProgress,
@@ -125,19 +126,7 @@ export function Hero({
                     200 Kursi
                   </p>
                 </div>
-                {/* Progress bar */}
-                <div className='mt-1.5'>
-                  <div className='h-3.5 w-full border-2 border-black bg-white overflow-hidden'>
-                    <div
-                      className='h-full bg-[#55E6A5]'
-                      style={{ width: '0%' }}
-                    />
-                  </div>
-                  <div className='flex justify-between font-mono text-[clamp(0.55rem,0.75vw,0.65rem)] font-bold text-black mt-0.5'>
-                    <span>0% Terisi</span>
-                    <span>Ayo Daftar!</span>
-                  </div>
-                </div>
+              <ProgressBar/>
               </div>
             </div>
           </div>
@@ -147,14 +136,14 @@ export function Hero({
             style={{ scale, rotate }}
             className='lg:col-span-5 relative flex justify-center items-center'
           >
-            <div className='relative w-full max-w-[clamp(220px,26vw,350px)] aspect-square border-3 sm:border-4 border-black bg-white shadow-[6px_6px_0px_0px_#000] sm:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] overflow-hidden md:flex flex-col items-center justify-center p-[clamp(0.875rem,2vw,2rem)] hidden'>
+            <div className='relative w-full max-w-[clamp(220px,26vw,350px)] aspect-video border-3 sm:border-4 border-black bg-white shadow-[6px_6px_0px_0px_#000] sm:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] md:flex flex-col items-center justify-center p-[clamp(0.875rem,2vw,2rem)] hidden'>
               {/* Central badge */}
               <Image
                 src='/images/logo.png'
                 alt='Hero'
                 width={200}
                 height={200}
-                className=' w-[clamp(2200px,16vw,220px)] h-auto object-contain'
+                className='absolute inset-0 -top-40 z-10 w-[clamp(2200px,16vw,2500px)] h-auto object-contain'
               />
             </div>
           </motion.div>
