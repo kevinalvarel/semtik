@@ -108,7 +108,7 @@ export default function SuccessPage() {
                   <Clock className='size-4 shrink-0 stroke-black stroke-[2]' />
                   <span className='text-black/60'>WAKTU:</span>
                   <span className='ml-auto font-black text-black'>
-                    08:30 - 12:50 WIB
+                    08:00 - 12:16 WIB
                   </span>
                 </div>
                 <div className='flex items-start gap-2 pt-0.5'>

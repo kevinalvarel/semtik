@@ -13,7 +13,7 @@ interface Session {
 
 const sessions: Session[] = [
   {
-    time: '08:30 - 09:35',
+    time: '08:00 - 09:35',
     title: 'REGISTRASI, PEMBUKAAN & SAMBUTAN',
     speaker: 'MC, Dekan FIK & Rektor Universitas Al-Khairiyah',
     description:
@@ -38,7 +38,7 @@ const sessions: Session[] = [
     color: 'bg-neo-green',
   },
   {
-    time: '12:20 - 12:50',
+    time: '12:20 - Selesai',
     title: 'NETWORKING',
     speaker: 'Panitia & Seluruh Peserta',
     description:

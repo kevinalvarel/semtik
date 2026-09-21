@@ -95,7 +95,7 @@ export function Hero({
                   </p>
                 </div>
                 <p className='font-mono text-[clamp(0.65rem,0.8vw,0.75rem)] text-black/75 mt-0.5'>
-                  08:30 - 12:50 WIB
+                    08:00 - 12:16 WIB
                 </p>
               </div>
 
