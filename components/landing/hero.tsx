@@ -91,7 +91,7 @@ export function Hero({
                     Waktu
                   </h3>
                   <p className='font-black text-[clamp(0.85rem,1.1vw,1rem)] text-black mt-0.5 leading-tight'>
-                    13 Desember 2026
+                    15 Desember 2026
                   </p>
                 </div>
                 <p className='font-mono text-[clamp(0.65rem,0.8vw,0.75rem)] text-black/75 mt-0.5'>

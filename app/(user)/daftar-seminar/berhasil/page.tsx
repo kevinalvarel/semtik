@@ -101,7 +101,7 @@ export default function SuccessPage() {
                   <Calendar className='size-4 shrink-0 stroke-black stroke-[2]' />
                   <span className='text-black/60'>HARI & TANGGAL:</span>
                   <span className='ml-auto font-black text-black'>
-                    Rabu, 13 Desember 2026
+                    Selasa, 15 Desember 2026
                   </span>
                 </div>
                 <div className='flex items-center gap-2 border-b-2 border-black border-dashed pb-2'>

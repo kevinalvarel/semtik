@@ -15,7 +15,7 @@ export function Countdown() {
     setTimeout(() => {
       setIsMounted(true);
     }, 0);
-    const targetDate = new Date('2026-12-13T08:00:00+07:00'); // 16 Des 2026, 08:00 AM WIB
+    const targetDate = new Date('2026-12-15T08:00:00+07:00'); // 15 Des 2026, 08:00 AM WIB
 
     const calculateTimeLeft = () => {
       const difference = +targetDate - +new Date();
@@ -59,7 +59,7 @@ export function Countdown() {
           Menuju Hari Seminar
         </h2>
         <p className='mx-auto max-w-xl text-sm sm:text-base font-bold text-black uppercase tracking-wide bg-white border-2 border-black py-1 px-4 inline-block mb-10 shadow-[2px_2px_0px_0px_#000]'>
-          13 DESEMBER 2026 • MULAI 08:00 WIB
+          15 DESEMBER 2026 • MULAI 08:00 WIB
         </p>
 
         {/* Timer Grid */}
